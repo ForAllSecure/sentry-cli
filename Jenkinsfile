@@ -14,5 +14,5 @@ node(label: 'linux') {
   def imageTag = "${env.TARGET_DOCKER_REGISTRY}/sentry-cli"
 
   def image = docker.build(imageTag, "-f Dockerfile .")
-  image.push(cliVersion)
+  image.push(cliVersion + "-alpine-3.14.2")
 }
